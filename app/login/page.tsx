@@ -8,17 +8,14 @@ export default function Login({
 }: {
   searchParams: { message: string };
 }) {
-  const signIn = async (formData: FormData) => {
+  const signInWithGithub = async () => {
     "use server";
 
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "github",
     });
 
     if (error) {
@@ -26,30 +23,6 @@ export default function Login({
     }
 
     return redirect("/");
-  };
-
-  const signUp = async (formData: FormData) => {
-    "use server";
-
-    const origin = headers().get("origin");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const cookieStore = cookies();
-    const supabase = createClient(cookieStore);
-
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${origin}/auth/callback`,
-      },
-    });
-
-    if (error) {
-      return redirect("/login?message=Could not authenticate user");
-    }
-
-    return redirect("/login?message=Check email to continue sign in process");
   };
 
   return (
@@ -77,41 +50,17 @@ export default function Login({
 
       <form
         className="flex flex-col justify-center flex-1 w-full gap-2 animate-in text-foreground"
-        action={signIn}
+        action={signInWithGithub}
       >
-        <label className="text-md" htmlFor="email">
-          Email
-        </label>
-        <input
-          className="px-4 py-2 mb-6 border rounded-md bg-inherit"
-          name="email"
-          placeholder="you@example.com"
-          required
-        />
-        <label className="text-md" htmlFor="password">
-          Password
-        </label>
-        <input
-          className="px-4 py-2 mb-6 border rounded-md bg-inherit"
-          type="password"
-          name="password"
-          placeholder="••••••••"
-          required
-        />
         <button className="px-4 py-2 mb-2 bg-green-700 rounded-md text-foreground">
           Sign In
         </button>
-        <button
+        {/* <button
           formAction={signUp}
           className="px-4 py-2 mb-2 border rounded-md border-foreground/20 text-foreground"
         >
           Sign Up
-        </button>
-        {searchParams?.message && (
-          <p className="p-4 mt-4 text-center bg-foreground/10 text-foreground">
-            {searchParams.message}
-          </p>
-        )}
+        </button> */}
       </form>
     </div>
   );
