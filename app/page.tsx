@@ -1,7 +1,5 @@
 import AuthButton from "../components/AuthButton";
 import { createClient } from "@/utils/supabase/server";
-import SignUpUserSteps from "@/components/SignUpUserSteps";
-import Header from "@/components/Header";
 import { cookies } from "next/headers";
 import Link from "next/link";
 
