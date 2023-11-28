@@ -5,6 +5,7 @@
 @layer base {
   :root {
     --background: 247 34% 29%;
+    --darker: 247 34% 24%;
     --btn-background: 224 33% 39%;
     --btn-background-hover: 224 25% 61%;
     --foreground: 200 20% 96%;
