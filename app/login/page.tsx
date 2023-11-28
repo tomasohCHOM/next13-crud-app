@@ -52,15 +52,10 @@ export default function Login({
         className="flex flex-col justify-center flex-1 w-full gap-2 animate-in text-foreground"
         action={signInWithGithub}
       >
-        <button className="px-4 py-2 mb-2 bg-green-700 rounded-md text-foreground">
+        <label className="text-xl text-center">Sign in with GitHub</label>
+        <button className="px-4 py-2 mb-2 transition border-2 rounded-md bg-background border-foreground hover:bg-btn-background-hover text-foreground">
           Sign In
         </button>
-        {/* <button
-          formAction={signUp}
-          className="px-4 py-2 mb-2 border rounded-md border-foreground/20 text-foreground"
-        >
-          Sign Up
-        </button> */}
       </form>
     </div>
   );
