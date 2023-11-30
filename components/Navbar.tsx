@@ -4,15 +4,17 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-center w-full h-16 border-b border-b-foreground/10">
-      <div className="flex items-center justify-between w-full max-w-4xl p-3 text-sm">
+    <nav className="flex h-16 w-full justify-center border-b border-b-foreground/20">
+      <div className="flex w-full max-w-4xl items-center justify-between p-3 text-sm">
         <Link href="/">
-          <span className="text-lg cursor-pointer">Bloggrz</span>
+          <span className="cursor-pointer text-lg">Bloggrz</span>
         </Link>
 
         <div className="flex items-center gap-4">
           <Link href="/create">
-            <span className="text-base cursor-pointer">Create</span>
+            <span className="cursor-pointer text-base hover:text-contrast">
+              Create
+            </span>
           </Link>
           <AuthButton />
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CreateArticle() {
   return (
-    <form className="flex flex-col items-center justify-center w-[min(80vw,_40rem)] gap-4 p-6 border-2 border-foreground md:p-10 bg-darker rounded-2xl">
+    <form className="flex w-[min(80vw,_40rem)] flex-col items-center justify-center gap-4 rounded-2xl border-2 border-foreground bg-darker p-6 md:p-10">
       <h3 className="text-2xl font-semibold">New Article</h3>
       <div className="w-full">
         <label htmlFor="title">Title</label>
@@ -10,7 +10,7 @@ export default function CreateArticle() {
           type="text"
           id="title"
           name="title"
-          className="w-full px-2 py-1 bg-transparent border-2 outline-none rounded-xl border-foreground"
+          className="w-full rounded-xl border-2 border-foreground bg-transparent px-2 py-1 outline-none"
         />
       </div>
 
@@ -20,12 +20,12 @@ export default function CreateArticle() {
           id="content"
           name="content"
           rows={5}
-          className="w-full px-2 py-1 bg-transparent border-2 outline-none resize-none rounded-xl border-foreground"
+          className="w-full resize-none rounded-xl border-2 border-foreground bg-transparent px-2 py-1 outline-none"
         />
       </div>
       <button
         type="submit"
-        className="w-full p-3 transition bg-btn-background rounded-2xl hover:bg-btn-background-hover cursort-pointer"
+        className="cursort-pointer w-full rounded-2xl bg-btn-background p-3 transition hover:bg-btn-background-hover"
       >
         Add Article
       </button>
