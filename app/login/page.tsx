@@ -22,14 +22,16 @@ export default function Login({
       return redirect("/login?message=Could not authenticate user");
     }
 
+    console.log(data);
+
     return redirect(data.url);
   };
 
   return (
-    <div className="flex flex-col justify-center flex-1 w-full gap-2 px-8 sm:max-w-md">
+    <div className="flex w-full flex-1 flex-col justify-center gap-2 px-8 sm:max-w-md">
       <Link
         href="/"
-        className="absolute flex items-center px-4 py-2 text-sm no-underline rounded-md left-8 top-8 text-foreground bg-btn-background hover:bg-btn-background-hover group"
+        className="group absolute left-8 top-8 flex items-center rounded-md bg-btn-background px-4 py-2 text-sm text-foreground no-underline hover:bg-btn-background-hover"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +43,7 @@ export default function Login({
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="w-4 h-4 mr-2 transition-transform group-hover:-translate-x-1"
+          className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
         >
           <polyline points="15 18 9 12 15 6" />
         </svg>{" "}
@@ -49,11 +51,11 @@ export default function Login({
       </Link>
 
       <form
-        className="flex flex-col justify-center flex-1 w-full gap-2 animate-in text-foreground"
+        className="animate-in flex w-full flex-1 flex-col justify-center gap-2 text-foreground"
         action={signInWithGithub}
       >
-        <label className="text-xl text-center">Sign in with GitHub</label>
-        <button className="px-4 py-2 mb-2 transition border-2 rounded-md bg-background border-foreground hover:bg-btn-background-hover text-foreground">
+        <label className="text-center text-xl">Sign in with GitHub</label>
+        <button className="mb-2 rounded-md border-2 border-foreground bg-background px-4 py-2 text-foreground transition hover:bg-btn-background-hover">
           Sign In
         </button>
       </form>
