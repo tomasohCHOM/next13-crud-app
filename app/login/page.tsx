@@ -24,7 +24,7 @@ export default function Login({
 
     console.log(data);
 
-    return redirect(data.url);
+    return redirect("/");
   };
 
   return (
@@ -50,14 +50,19 @@ export default function Login({
         Back
       </Link>
 
-      <form
-        className="animate-in flex w-full flex-1 flex-col justify-center gap-2 text-foreground"
-        action={signInWithGithub}
-      >
+      <form className="animate-in flex w-full flex-1 flex-col justify-center gap-2 text-foreground">
         <label className="text-center text-xl">Sign in with GitHub</label>
-        <button className="mb-2 rounded-md border-2 border-foreground bg-background px-4 py-2 text-foreground transition hover:bg-btn-background-hover">
+        <button
+          formAction={signInWithGithub}
+          className="mb-2 rounded-md border-2 border-foreground bg-background px-4 py-2 text-foreground transition hover:bg-btn-background-hover"
+        >
           Sign In
         </button>
+        {searchParams?.message && (
+          <p className="mt-4 bg-foreground/10 p-4 text-center text-foreground">
+            {searchParams.message}
+          </p>
+        )}
       </form>
     </div>
   );
