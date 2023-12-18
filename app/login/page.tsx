@@ -14,15 +14,13 @@ export default function Login({
     const cookieStore = cookies();
     const supabase = createClient(cookieStore);
 
-    const { data, error } = await supabase.auth.signInWithOAuth({
+    const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
     });
 
     if (error) {
       return redirect("/login?message=Could not authenticate user");
     }
-
-    console.log(data);
 
     return redirect("/");
   };
