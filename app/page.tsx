@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import Articles from "@/components/Articles";
+import Articles from "@/components/Article";
 
 export default async function Index() {
   return (

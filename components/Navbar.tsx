@@ -1,5 +1,4 @@
 import React from "react";
-import AuthButton from "./AuthButton";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -16,7 +15,11 @@ export default function Navbar() {
               Create
             </span>
           </Link>
-          <AuthButton />
+          <Link href="/about">
+            <span className="cursor-pointer text-base hover:text-contrast">
+              About
+            </span>
+          </Link>
         </div>
       </div>
     </nav>
