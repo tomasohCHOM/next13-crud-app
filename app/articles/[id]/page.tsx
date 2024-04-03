@@ -1,9 +1,8 @@
 import React from "react";
-import PocketBase from "pocketbase";
-import { Article } from "@/interface/interface";
+import type { Article } from "@/data/interface";
+import { pb } from "@/data/db";
 
 async function getNote(id: string) {
-  const pb = new PocketBase("http://127.0.0.1:8090");
   const article = await pb.collection("articles").getOne<Article>(id);
   return article;
 }

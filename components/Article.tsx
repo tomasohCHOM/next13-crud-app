@@ -1,10 +1,9 @@
 import React from "react";
-import PocketBase from "pocketbase";
-import { Article } from "@/interface/interface";
+import { pb } from "@/data/db";
+import type { Article } from "@/data/interface";
 import Link from "next/link";
 
 async function getArticles() {
-  const pb = new PocketBase("http://127.0.0.1:8090");
   const data = await pb
     .collection("articles")
     .getFullList<Article>({ sort: "-created" });
