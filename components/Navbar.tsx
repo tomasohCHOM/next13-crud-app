@@ -11,14 +11,10 @@ export default function Navbar() {
 
         <div className="flex items-center gap-4">
           <Link href="/create">
-            <span className="cursor-pointer text-base hover:text-contrast">
-              Create
-            </span>
+            <span className="cursor-pointer text-base">Create</span>
           </Link>
           <Link href="/about">
-            <span className="cursor-pointer text-base hover:text-contrast">
-              About
-            </span>
+            <span className="cursor-pointer text-base">About</span>
           </Link>
         </div>
       </div>

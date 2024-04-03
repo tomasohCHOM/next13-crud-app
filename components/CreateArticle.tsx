@@ -2,7 +2,7 @@ import React from "react";
 
 export default function CreateArticle() {
   return (
-    <form className="flex w-[min(80vw,_40rem)] flex-col items-center justify-center gap-4 rounded-2xl border-2 border-foreground bg-darker p-6 md:p-10">
+    <form className="flex w-[min(80vw,_40rem)] flex-col items-center justify-center gap-4 rounded-2xl border-2 border-slate-400 bg-darker p-6 md:p-10">
       <h3 className="text-2xl font-semibold">New Article</h3>
       <div className="w-full">
         <label htmlFor="title">Title</label>

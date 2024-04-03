@@ -9,27 +9,11 @@
     --btn-background: 224 33% 39%;
     --btn-background-hover: 224 25% 61%;
     --foreground: 200 20% 96%;
-    --contrast: 43 72% 90%;
   }
 }
 
 @layer base {
   * {
     @apply border-foreground/20;
-  }
-}
-
-.animate-in {
-  animation: animateIn 0.3s ease 0.15s both;
-}
-
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
