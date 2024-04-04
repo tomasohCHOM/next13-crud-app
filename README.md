@@ -19,5 +19,5 @@ some collections and update read/write access.
 
 ### Resources
 
-- [Fireship's Next 13 starter tutorial](https://github.com/vercel/nextjs-subscription-payments)
+- [Fireship's Next 13 starter tutorial](https://www.youtube.com/watch?v=__mSgDEOyv8)
 - [PocketBase documentation](https://pocketbase.io/docs/)
